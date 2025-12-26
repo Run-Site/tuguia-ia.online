@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinero IA | Guía práctica</title>
+
+  <meta name="description" content="Guía práctica para aprender a usar inteligencia artificial de forma simple y aplicada.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: auto;
+      padding: 25px 20px 50px;
+      text-align: center;
+    }
+
+    /* LOGO */
+    .logo {
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #d0d0d0;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #00e676, #00c853);
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #aaaaaa;
+      margin-top: 15px;
+    }
+
+    .highlight {
+      color: #00e676;
+      font-weight: bold;
+    }
+
+    .divider {
+      height: 1px;
+      background: #2a2a2a;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PASO 1 -->
+  <div class="container" id="step1">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo-dinero-ia.png" alt="Dinero IA">
+    </div>
+
+    <h1>Aprendé a usar IA<br>para generar oportunidades reales</h1>
+
+    <p>
+      Sin programar. Sin experiencia previa.<br>
+      Con ejemplos simples y aplicables desde hoy.
+    </p>
+
+    <div class="box">
+      <ul>
+        <li>✅ 5 prompts listos para usar</li>
+        <li>✅ Explicados en lenguaje simple</li>
+        <li>✅ Ideas reales de uso con IA</li>
+        <li>✅ Cómo empezar hoy sin invertir dinero</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <p>
+        Si sentís que la tecnología avanza y no sabés por dónde empezar,
+        esta guía es para vos.
+      </p>
+    </div>
+
+    <button class="btn" onclick="goStep2()">
+      QUIERO LA GUÍA GRATIS
+    </button>
+
+    <p class="note">
+      Acceso manual para evitar spam.
+    </p>
+
+  </div>
+
+  <!-- PASO 2 -->
+  <div class="container hidden" id="step2">
+
+    <div class="logo">
+      <img src="logo-dinero-ia.png" alt="Dinero IA">
+    </div>
+
+    <h2>Estás a un solo paso</h2>
+
+    <p>
+      Para enviarte la guía gratuita necesitás escribirme por WhatsApp.
+    </p>
+
+    <div class="box">
+      <p>Copiá y pegá este mensaje:</p>
+      <p class="highlight">Hola, quiero la guía de IA</p>
+    </div>
+
+    <button class="btn" onclick="openWhatsApp()">
+      ABRIR CHAT
+    </button>
+
+    <div class="divider"></div>
+
+    <p class="note">
+      La guía es gratuita.<br>
+      Luego vas a ver cómo escalar esto.
+    </p>
+
+  </div>
+
+  <script>
+    function goStep2() {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+      window.scrollTo(0, 0);
+    }
+
+    function openWhatsApp() {
+      const phone = "5493544560101"; // TU NÚMERO
+      const text = "Hola, quiero la guía de IA";
+      const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
