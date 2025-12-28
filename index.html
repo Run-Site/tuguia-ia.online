@@ -29,7 +29,6 @@
       text-align: center;
     }
 
-    /* LOGO */
     .logo {
       margin-bottom: 20px;
     }
@@ -85,11 +84,8 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      text-decoration: none;
       margin-top: 10px;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
     }
 
     .hidden {
@@ -117,92 +113,108 @@
 
 <body>
 
-  <!-- PASO 1 -->
-  <div class="container" id="step1">
+<!-- PASO 1 -->
+<div class="container" id="step1">
 
-    <!-- LOGO -->
-    <div class="logo">
-      <img src="logo-dinero-ia.png" alt="Dinero IA">
-    </div>
-
-    <h1>Aprendé a usar IA<br>para generar oportunidades reales</h1>
-
-    <p>
-      Sin programar. Sin experiencia previa.<br>
-      Con ejemplos simples y aplicables desde hoy.
-    </p>
-
-    <div class="box">
-      <ul>
-        <li>✅ 5 prompts listos para usar</li>
-        <li>✅ Explicados en lenguaje simple</li>
-        <li>✅ Ideas reales de uso con IA</li>
-        <li>✅ Cómo empezar hoy sin invertir dinero</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <p>
-        Si sentís que la tecnología avanza y no sabés por dónde empezar,
-        esta guía es para vos.
-      </p>
-    </div>
-
-    <button class="btn" onclick="goStep2()">
-      QUIERO LA GUÍA GRATIS
-    </button>
-
-    <p class="note">
-      Acceso manual para evitar spam.
-    </p>
-
+  <div class="logo">
+    <img src="logo-dinero-ia.png" alt="Dinero IA">
   </div>
 
-  <!-- PASO 2 -->
-  <div class="container hidden" id="step2">
+  <h1>Aprendé a usar IA<br>para generar oportunidades reales</h1>
 
-    <div class="logo">
-      <img src="logo-dinero-ia.png" alt="Dinero IA">
-    </div>
+  <p>
+    Sin programar. Sin experiencia previa.<br>
+    Con ejemplos simples y aplicables desde hoy.
+  </p>
 
-    <h2>Estás a un solo paso</h2>
-
-    <p>
-      Para enviarte la guía gratuita necesitás escribirme por WhatsApp.
-    </p>
-
-    <div class="box">
-      <p>Copiá y pegá este mensaje:</p>
-      <p class="highlight">Hola, quiero la guía de IA</p>
-    </div>
-
-    <button class="btn" onclick="openWhatsApp()">
-      ABRIR CHAT
-    </button>
-
-    <div class="divider"></div>
-
-    <p class="note">
-      La guía es gratuita.<br>
-      Luego vas a ver cómo escalar esto.
-    </p>
-
+  <div class="box">
+    <ul>
+      <li>✅ 5 prompts listos para usar</li>
+      <li>✅ Explicados en lenguaje simple</li>
+      <li>✅ Ideas reales de uso con IA</li>
+      <li>✅ Cómo empezar hoy sin invertir dinero</li>
+    </ul>
   </div>
 
-  <script>
-    function goStep2() {
-      document.getElementById("step1").classList.add("hidden");
-      document.getElementById("step2").classList.remove("hidden");
-      window.scrollTo(0, 0);
-    }
+  <div class="box">
+    <p>
+      Si sentís que la tecnología avanza y no sabés por dónde empezar,
+      esta guía es para vos.
+    </p>
+  </div>
 
-    function openWhatsApp() {
-      const phone = "5493544560101"; // TU NÚMERO
-      const text = "Hola, quiero la guía de IA";
-      const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
-      window.location.href = url;
+  <button class="btn" onclick="goStep2()">QUIERO LA GUÍA GRATIS</button>
+
+  <p class="note">Acceso manual para evitar spam.</p>
+</div>
+
+<!-- PASO 2 -->
+<div class="container hidden" id="step2">
+
+  <div class="logo">
+    <img src="logo-dinero-ia.png" alt="Dinero IA">
+  </div>
+
+  <h2>Estás a un solo paso</h2>
+
+  <p>
+    Para enviarte la guía gratuita necesitás escribirme por WhatsApp.
+  </p>
+
+  <p class="note">
+    Si estás desde TikTok y no se abre WhatsApp,<br>
+    tocá los tres puntos ⋮ y abrí en el navegador.
+  </p>
+
+  <div class="box">
+    <p>Mensaje a enviar:</p>
+    <p class="highlight">Hola, quiero la guía de IA</p>
+  </div>
+
+  <button class="btn" onclick="openWhatsApp()">ABRIR WHATSAPP</button>
+
+  <div class="divider"></div>
+
+  <p class="note">
+    La guía es gratuita.<br>
+    Luego vas a ver cómo escalar esto.
+  </p>
+</div>
+
+<script>
+  function goStep2() {
+    document.getElementById("step1").classList.add("hidden");
+    document.getElementById("step2").classList.remove("hidden");
+    window.scrollTo(0, 0);
+  }
+
+  function openWhatsApp() {
+    const phone = "5493544560101"; // ← CAMBIÁ SOLO ESTO
+    const text = "Hola, quiero la guía de IA";
+    const waUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+
+    const isTikTok = /TikTok/i.test(navigator.userAgent);
+
+    if (isTikTok) {
+      document.getElementById("step2").innerHTML = `
+        <div class="logo">
+          <img src="logo-dinero-ia.png" alt="Dinero IA">
+        </div>
+        <h2>Último paso</h2>
+        <p>TikTok no permite abrir WhatsApp directamente.</p>
+        <div class="box">
+          <p><strong>Qué hacer:</strong></p>
+          <p>1️⃣ Tocá los tres puntos ⋮ arriba</p>
+          <p>2️⃣ Elegí <strong>Abrir en navegador</strong></p>
+          <p>3️⃣ Volvé a tocar el botón</p>
+        </div>
+        <a href="${waUrl}" class="btn">ABRIR WHATSAPP</a>
+      `;
+    } else {
+      window.location.href = waUrl;
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
